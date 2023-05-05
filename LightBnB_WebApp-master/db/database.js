@@ -99,7 +99,7 @@ const addUser = (user) => {
     RETURNING *`, [user.name, user.email, user.password])
     .then((result) => {
       //console.log("check users:", result)
-      return result.rows[0]
+      return result.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
@@ -129,7 +129,7 @@ const getAllReservations = (guest_id, limit = 10) => {
     ORDER BY reservations.start_date
     LIMIT $2`, [guest_id, limit])
     .then((result) => {
-      console.log("check reservations:", result)
+      //console.log("check reservations:", result)
       return result.rows;
     })
     .catch((err) => {
